@@ -1,3 +1,5 @@
 /.idea/*
 /db_dumps/*
 !/db_dumps/README.md
+/volume/*
+/volume/.gitkeep

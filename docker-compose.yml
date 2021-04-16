@@ -31,3 +31,7 @@ services:
 
 volumes:
   mysql_vol:
+    driver_opts:
+      type: none
+      o: bind
+      device: ./volume
