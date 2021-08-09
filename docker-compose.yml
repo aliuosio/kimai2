@@ -13,7 +13,7 @@ services:
     ports:
       - "81:8001"
     depends_on:
-      - mysql
+      - db
 
   db:
     container_name: kimai_db
