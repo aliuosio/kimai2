@@ -1,5 +1,5 @@
 /.idea/*
-/db_dumps/*
-!/db_dumps/README.md
-/volume/*
-/volume/.gitkeep
+/.docker/mysql/db_dumps/*
+!/.docker/mysql/db_dumps/README.md
+/.docker/mysql/volume/*
+!/.docker/mysql/volume/.gitkeep

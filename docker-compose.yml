@@ -15,23 +15,22 @@ services:
     depends_on:
       - mysql
 
-  mysql:
+  db:
+    container_name: kimai_db
     image: mysql:5.7
-    container_name: kimai2_mysql
     environment:
-      MYSQL_DATABASE: kimai
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - 3307:3306
     volumes:
-      - mysql_vol:/var/lib/mysql/
-      - ./db_dumps:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/mysql/
 
 volumes:
-  mysql_vol:
+  db_data:
     driver_opts:
       type: none
       o: bind
-      device: ./volume
+      device: ./.docker/mysql/volume
