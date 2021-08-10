@@ -3,3 +3,4 @@
 !/.docker/mysql/db_dumps/README.md
 /.docker/mysql/volume/*
 !/.docker/mysql/volume/.gitkeep
+/.env
