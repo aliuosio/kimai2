@@ -3,7 +3,7 @@ version: "3.8"
 services:
 
   kimai2:
-    image: kimai/kimai2:1.0.1
+    image: osioaliu/kimai2:1.14.3
     container_name: kimai2
     environment:
       DATABASE_URL: ${DATABASE_URL}
@@ -14,6 +14,8 @@ services:
       - "81:8001"
     depends_on:
       - db
+    volumes:
+      - composer_cache:/home/www/.composer:delegated
 
   db:
     container_name: kimai_db
@@ -40,3 +42,8 @@ volumes:
       type: none
       o: bind
       device: ./.docker/mysql/db_dumps
+  composer_cache:
+    driver_opts:
+      type: none
+      o: bind
+      device: ${HOME}/.composer
