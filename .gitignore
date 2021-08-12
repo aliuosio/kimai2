@@ -4,3 +4,4 @@
 /.docker/mysql/volume/*
 !/.docker/mysql/volume/.gitkeep
 /.env
+/src/*

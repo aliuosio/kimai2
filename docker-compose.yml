@@ -16,6 +16,7 @@ services:
       - db
     volumes:
       - composer_cache:/home/www/.composer:delegated
+      - app_data:/opt/kimai
 
   db:
     container_name: kimai_db
@@ -47,3 +48,8 @@ volumes:
       type: none
       o: bind
       device: ${HOME}/.composer
+  app_data:
+    driver_opts:
+      type: none
+      o: bind
+      device: src
